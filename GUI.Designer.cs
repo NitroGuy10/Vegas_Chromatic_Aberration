@@ -36,13 +36,18 @@ namespace Vegas_Chromatic_Aberration
             this.horizontalOffsetLabel = new System.Windows.Forms.Label();
             this.horizontalOffsetSlider = new System.Windows.Forms.TrackBar();
             this.horizontalOffsetTextBox = new System.Windows.Forms.TextBox();
+            this.offsetChannelsLabel = new System.Windows.Forms.Label();
+            this.redBox = new System.Windows.Forms.CheckBox();
+            this.greenBox = new System.Windows.Forms.CheckBox();
+            this.blueBox = new System.Windows.Forms.CheckBox();
+            this.chooseTwoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.verticalOffsetSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalOffsetSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // applyBtn
             // 
-            this.applyBtn.Location = new System.Drawing.Point(12, 82);
+            this.applyBtn.Location = new System.Drawing.Point(12, 118);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(442, 62);
             this.applyBtn.TabIndex = 0;
@@ -108,11 +113,64 @@ namespace Vegas_Chromatic_Aberration
             this.horizontalOffsetTextBox.Text = "0";
             this.horizontalOffsetTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.horizontalOffsetTextBox_KeyDown);
             // 
+            // offsetChannelsLabel
+            // 
+            this.offsetChannelsLabel.AutoSize = true;
+            this.offsetChannelsLabel.Location = new System.Drawing.Point(15, 77);
+            this.offsetChannelsLabel.Name = "offsetChannelsLabel";
+            this.offsetChannelsLabel.Size = new System.Drawing.Size(82, 13);
+            this.offsetChannelsLabel.TabIndex = 7;
+            this.offsetChannelsLabel.Text = "Offset Channels";
+            // 
+            // redBox
+            // 
+            this.redBox.AutoSize = true;
+            this.redBox.Location = new System.Drawing.Point(120, 77);
+            this.redBox.Name = "redBox";
+            this.redBox.Size = new System.Drawing.Size(46, 17);
+            this.redBox.TabIndex = 8;
+            this.redBox.Text = "Red";
+            this.redBox.UseVisualStyleBackColor = true;
+            // 
+            // greenBox
+            // 
+            this.greenBox.AutoSize = true;
+            this.greenBox.Location = new System.Drawing.Point(211, 76);
+            this.greenBox.Name = "greenBox";
+            this.greenBox.Size = new System.Drawing.Size(55, 17);
+            this.greenBox.TabIndex = 9;
+            this.greenBox.Text = "Green";
+            this.greenBox.UseVisualStyleBackColor = true;
+            // 
+            // blueBox
+            // 
+            this.blueBox.AutoSize = true;
+            this.blueBox.Location = new System.Drawing.Point(301, 76);
+            this.blueBox.Name = "blueBox";
+            this.blueBox.Size = new System.Drawing.Size(47, 17);
+            this.blueBox.TabIndex = 10;
+            this.blueBox.Text = "Blue";
+            this.blueBox.UseVisualStyleBackColor = true;
+            // 
+            // chooseTwoLabel
+            // 
+            this.chooseTwoLabel.AutoSize = true;
+            this.chooseTwoLabel.Location = new System.Drawing.Point(369, 78);
+            this.chooseTwoLabel.Name = "chooseTwoLabel";
+            this.chooseTwoLabel.Size = new System.Drawing.Size(73, 13);
+            this.chooseTwoLabel.TabIndex = 11;
+            this.chooseTwoLabel.Text = "<-- (Choose 2)";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 156);
+            this.ClientSize = new System.Drawing.Size(466, 192);
+            this.Controls.Add(this.chooseTwoLabel);
+            this.Controls.Add(this.blueBox);
+            this.Controls.Add(this.greenBox);
+            this.Controls.Add(this.redBox);
+            this.Controls.Add(this.offsetChannelsLabel);
             this.Controls.Add(this.horizontalOffsetTextBox);
             this.Controls.Add(this.horizontalOffsetLabel);
             this.Controls.Add(this.applyBtn);
@@ -138,6 +196,11 @@ namespace Vegas_Chromatic_Aberration
         private System.Windows.Forms.Label horizontalOffsetLabel;
         private System.Windows.Forms.TrackBar horizontalOffsetSlider;
         private System.Windows.Forms.TextBox horizontalOffsetTextBox;
+        private System.Windows.Forms.Label offsetChannelsLabel;
+        private System.Windows.Forms.CheckBox redBox;
+        private System.Windows.Forms.CheckBox greenBox;
+        private System.Windows.Forms.CheckBox blueBox;
+        private System.Windows.Forms.Label chooseTwoLabel;
     }
 }
 

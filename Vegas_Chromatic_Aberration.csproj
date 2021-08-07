@@ -7,7 +7,7 @@
     <ProjectGuid>{A4470FE8-1E51-460F-AB0C-9D84DBA2459A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Vegas_Chromatic_Aberration</RootNamespace>
-    <AssemblyName>Vegas_Chromatic_Aberration</AssemblyName>
+    <AssemblyName>ChromaticAberration</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
