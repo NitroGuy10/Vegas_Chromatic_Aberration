@@ -24,7 +24,10 @@ You can also add it to your toolbar by double-clicking on the toolbar, choosing 
 
 After choosing your settings and pressing "Create Tracks", the plugin will create 2 tracks (one for your target channel and one for the other channels) nested in a third parent channel.
 To apply to chromatic aberration effect to a clip, copy and paste that clip into **BOTH** nested tracks as shown below.
-Feel free to move the parent track around to your desired "height" in the timeline.
+Feel free to select all 3 tracks and move them around to your desired "height" in the timeline.
+
+If you want to apply effects or motion to the clips in BOTH nested tracks at the same time, you can do so with the parent track.
+Use "Parent Motion" to apply motion and add effects like you would to any normal clip; **HOWEVER**, please note that to apply effects to both nested tracks, you must position the effects **AFTER** the "Composite" item in the effects chain.
 
 ![The timeline tracks created by this plugin](timeline.png)
 
