@@ -58,8 +58,8 @@ namespace Vegas_Chromatic_Aberration
             // verticalOffsetSlider
             // 
             this.verticalOffsetSlider.Location = new System.Drawing.Point(103, 45);
-            this.verticalOffsetSlider.Maximum = 500;
-            this.verticalOffsetSlider.Minimum = -500;
+            this.verticalOffsetSlider.Maximum = 150;
+            this.verticalOffsetSlider.Minimum = -150;
             this.verticalOffsetSlider.Name = "verticalOffsetSlider";
             this.verticalOffsetSlider.Size = new System.Drawing.Size(245, 45);
             this.verticalOffsetSlider.TabIndex = 1;
@@ -96,8 +96,8 @@ namespace Vegas_Chromatic_Aberration
             // horizontalOffsetSlider
             // 
             this.horizontalOffsetSlider.Location = new System.Drawing.Point(103, 16);
-            this.horizontalOffsetSlider.Maximum = 500;
-            this.horizontalOffsetSlider.Minimum = -500;
+            this.horizontalOffsetSlider.Maximum = 150;
+            this.horizontalOffsetSlider.Minimum = -150;
             this.horizontalOffsetSlider.Name = "horizontalOffsetSlider";
             this.horizontalOffsetSlider.Size = new System.Drawing.Size(245, 45);
             this.horizontalOffsetSlider.TabIndex = 5;
@@ -125,6 +125,8 @@ namespace Vegas_Chromatic_Aberration
             // redBox
             // 
             this.redBox.AutoSize = true;
+            this.redBox.Checked = true;
+            this.redBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.redBox.Location = new System.Drawing.Point(120, 77);
             this.redBox.Name = "redBox";
             this.redBox.Size = new System.Drawing.Size(46, 17);
@@ -145,6 +147,8 @@ namespace Vegas_Chromatic_Aberration
             // blueBox
             // 
             this.blueBox.AutoSize = true;
+            this.blueBox.Checked = true;
+            this.blueBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.blueBox.Location = new System.Drawing.Point(301, 76);
             this.blueBox.Name = "blueBox";
             this.blueBox.Size = new System.Drawing.Size(47, 17);

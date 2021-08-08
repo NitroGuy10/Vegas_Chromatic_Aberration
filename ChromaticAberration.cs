@@ -9,34 +9,30 @@ namespace Vegas_Chromatic_Aberration
 {
     static class ChromaticAberration
     {
+        private static readonly string[] channelNames = { "RED", "GREEN", "BLUE" };
         public static void Apply()
         {
-            VideoTrack track3 = GUI.Vegas.Project.AddVideoTrack();
             VideoTrack track2 = GUI.Vegas.Project.AddVideoTrack();
             VideoTrack track1 = GUI.Vegas.Project.AddVideoTrack();
             VideoTrack parentTrack = GUI.Vegas.Project.AddVideoTrack();
 
             track1.CompositeNestingLevel = 1;
             track2.CompositeNestingLevel = 1;
-            track3.CompositeNestingLevel = 1;
 
             parentTrack.Name = "Chromatic Aberration";
-            
+
 
             track1.CompositeMode = CompositeMode.Add;
             track2.CompositeMode = CompositeMode.Add;
-            track3.CompositeMode = CompositeMode.Add;
 
             PictureInPicture(track1, SettingControl.SettingControls["Horizontal Offset"].Value + 0.5, SettingControl.SettingControls["Vertical Offset"].Value + 0.5);
-            PictureInPicture(track3, -SettingControl.SettingControls["Horizontal Offset"].Value + 0.5, -SettingControl.SettingControls["Vertical Offset"].Value + 0.5);
+            PictureInPicture(track2, -SettingControl.SettingControls["Horizontal Offset"].Value + 0.5, -SettingControl.SettingControls["Vertical Offset"].Value + 0.5);
 
             // TODO name tracks and apply appropriate channel blend settings to match the state of the GUI's checkboxes
-            ChannelBlend(track1, "TODO");
-            ChannelBlend(track2, "TODO");
-            ChannelBlend(track3, "TODO");
+            ChannelBlend(track1, "RED");
+            ChannelBlend(track2, "RED", true);
             track1.Name = "Red";
-            track2.Name = "Green";
-            track3.Name = "Blue";
+            track2.Name = "Green & Blue";
         }
 
         private static void PictureInPicture(VideoTrack videoTrack, double x, double y)
@@ -56,9 +52,23 @@ namespace Vegas_Chromatic_Aberration
             location.ParameterChanged();
         }
 
-        private static void ChannelBlend(VideoTrack videoTrack, string channelName)
+        private static void ChannelBlend(VideoTrack videoTrack, string channelName, Boolean everythingExcept = false)
         {
-            // TODO apply Channel Blend effect
+            videoTrack.Effects.AddEffect(GUI.Vegas.VideoFX.GetChildByName("VEGAS Channel Blend"));
+            OFXEffect ofxEffect = videoTrack.Effects[videoTrack.Effects.Count - 1].OFXEffect;
+
+            foreach (string currentName in channelNames)
+            {
+                double weight = 0;
+                if ((!everythingExcept && currentName.Equals(channelName)) || (everythingExcept && !currentName.Equals(channelName)))
+                {
+                    weight = 1;
+                }
+
+                OFXDoubleParameter parameter = (OFXDoubleParameter)ofxEffect.FindParameterByName(currentName + " weight " + currentName.Substring(0, 1));
+                parameter.Value = weight;
+                parameter.ParameterChanged();
+            }
         }
     }
 }
