@@ -16,18 +16,39 @@ namespace Vegas_Chromatic_Aberration
         public static GUI MainGUI;
         public static Vegas Vegas;
 
+        public static Dictionary<string, CheckBox> channelBoxes = new Dictionary<string, CheckBox>();
+        
         public GUI()
         {
             InitializeComponent();
 
             new SettingControl(horizontalOffsetSlider, horizontalOffsetTextBox, 0.001, 0, "Horizontal Offset");
             new SettingControl(verticalOffsetSlider, verticalOffsetTextBox, 0.001, 0, "Vertical Offset");
+
+            channelBoxes["red"] = redBox;
+            channelBoxes["green"] = greenBox;
+            channelBoxes["blue"] = blueBox;
         }
 
         private void applyBtn_Click(object sender, EventArgs e)
         {
-            ChromaticAberration.Apply();
-            Close();
+            int numChecked = 0;
+            foreach (CheckBox box in channelBoxes.Values)
+            {
+                if (box.Checked)
+                {
+                    numChecked++;
+                }
+            }
+            if (numChecked == 2)
+            {
+                ChromaticAberration.Apply();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Please choose only 2 channels");
+            }
         }
 
         private void horizontalOffsetSlider_Scroll(object sender, EventArgs e)
