@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ScriptPortal.Vegas;
+using System.Windows.Forms;
 
 namespace Vegas_Chromatic_Aberration
 {
@@ -28,11 +26,22 @@ namespace Vegas_Chromatic_Aberration
             PictureInPicture(track1, SettingControl.SettingControls["Horizontal Offset"].Value + 0.5, SettingControl.SettingControls["Vertical Offset"].Value + 0.5);
             PictureInPicture(track2, -SettingControl.SettingControls["Horizontal Offset"].Value + 0.5, -SettingControl.SettingControls["Vertical Offset"].Value + 0.5);
 
-            // TODO name tracks and apply appropriate channel blend settings to match the state of the GUI's checkboxes
-            ChannelBlend(track1, "RED");
-            ChannelBlend(track2, "RED", true);
-            track1.Name = "Red";
-            track2.Name = "Green & Blue";
+            List<string> nonTargetChannels = new List<string>();
+            foreach(KeyValuePair<string, RadioButton> channelButton in GUI.channelButtons)
+            {
+                if (channelButton.Value.Checked)
+                {
+                    ChannelBlend(track1, channelButton.Key);
+                    ChannelBlend(track2, channelButton.Key, true);
+
+                    track1.Name = channelButton.Key;
+                }
+                else
+                {
+                    nonTargetChannels.Add(channelButton.Key);
+                }
+            }
+            track2.Name = string.Join(" & ", nonTargetChannels);
         }
 
         private static void PictureInPicture(VideoTrack videoTrack, double x, double y)

@@ -37,10 +37,9 @@ namespace Vegas_Chromatic_Aberration
             this.horizontalOffsetSlider = new System.Windows.Forms.TrackBar();
             this.horizontalOffsetTextBox = new System.Windows.Forms.TextBox();
             this.offsetChannelsLabel = new System.Windows.Forms.Label();
-            this.redBox = new System.Windows.Forms.CheckBox();
-            this.greenBox = new System.Windows.Forms.CheckBox();
-            this.blueBox = new System.Windows.Forms.CheckBox();
-            this.chooseTwoLabel = new System.Windows.Forms.Label();
+            this.redButton = new System.Windows.Forms.RadioButton();
+            this.greenButton = new System.Windows.Forms.RadioButton();
+            this.blueButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.verticalOffsetSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalOffsetSlider)).BeginInit();
             this.SuspendLayout();
@@ -58,8 +57,8 @@ namespace Vegas_Chromatic_Aberration
             // verticalOffsetSlider
             // 
             this.verticalOffsetSlider.Location = new System.Drawing.Point(103, 45);
-            this.verticalOffsetSlider.Maximum = 150;
-            this.verticalOffsetSlider.Minimum = -150;
+            this.verticalOffsetSlider.Maximum = 50;
+            this.verticalOffsetSlider.Minimum = -50;
             this.verticalOffsetSlider.Name = "verticalOffsetSlider";
             this.verticalOffsetSlider.Size = new System.Drawing.Size(245, 45);
             this.verticalOffsetSlider.TabIndex = 1;
@@ -96,8 +95,8 @@ namespace Vegas_Chromatic_Aberration
             // horizontalOffsetSlider
             // 
             this.horizontalOffsetSlider.Location = new System.Drawing.Point(103, 16);
-            this.horizontalOffsetSlider.Maximum = 150;
-            this.horizontalOffsetSlider.Minimum = -150;
+            this.horizontalOffsetSlider.Maximum = 50;
+            this.horizontalOffsetSlider.Minimum = -50;
             this.horizontalOffsetSlider.Name = "horizontalOffsetSlider";
             this.horizontalOffsetSlider.Size = new System.Drawing.Size(245, 45);
             this.horizontalOffsetSlider.TabIndex = 5;
@@ -116,64 +115,52 @@ namespace Vegas_Chromatic_Aberration
             // offsetChannelsLabel
             // 
             this.offsetChannelsLabel.AutoSize = true;
-            this.offsetChannelsLabel.Location = new System.Drawing.Point(15, 77);
+            this.offsetChannelsLabel.Location = new System.Drawing.Point(17, 78);
             this.offsetChannelsLabel.Name = "offsetChannelsLabel";
-            this.offsetChannelsLabel.Size = new System.Drawing.Size(82, 13);
+            this.offsetChannelsLabel.Size = new System.Drawing.Size(80, 13);
             this.offsetChannelsLabel.TabIndex = 7;
-            this.offsetChannelsLabel.Text = "Offset Channels";
+            this.offsetChannelsLabel.Text = "Target Channel";
             // 
-            // redBox
+            // redButton
             // 
-            this.redBox.AutoSize = true;
-            this.redBox.Checked = true;
-            this.redBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.redBox.Location = new System.Drawing.Point(120, 77);
-            this.redBox.Name = "redBox";
-            this.redBox.Size = new System.Drawing.Size(46, 17);
-            this.redBox.TabIndex = 8;
-            this.redBox.Text = "Red";
-            this.redBox.UseVisualStyleBackColor = true;
+            this.redButton.AutoSize = true;
+            this.redButton.Checked = true;
+            this.redButton.Location = new System.Drawing.Point(117, 76);
+            this.redButton.Name = "redButton";
+            this.redButton.Size = new System.Drawing.Size(45, 17);
+            this.redButton.TabIndex = 12;
+            this.redButton.TabStop = true;
+            this.redButton.Text = "Red";
+            this.redButton.UseVisualStyleBackColor = true;
             // 
-            // greenBox
+            // greenButton
             // 
-            this.greenBox.AutoSize = true;
-            this.greenBox.Location = new System.Drawing.Point(211, 76);
-            this.greenBox.Name = "greenBox";
-            this.greenBox.Size = new System.Drawing.Size(55, 17);
-            this.greenBox.TabIndex = 9;
-            this.greenBox.Text = "Green";
-            this.greenBox.UseVisualStyleBackColor = true;
+            this.greenButton.AutoSize = true;
+            this.greenButton.Location = new System.Drawing.Point(206, 76);
+            this.greenButton.Name = "greenButton";
+            this.greenButton.Size = new System.Drawing.Size(54, 17);
+            this.greenButton.TabIndex = 13;
+            this.greenButton.Text = "Green";
+            this.greenButton.UseVisualStyleBackColor = true;
             // 
-            // blueBox
+            // blueButton
             // 
-            this.blueBox.AutoSize = true;
-            this.blueBox.Checked = true;
-            this.blueBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.blueBox.Location = new System.Drawing.Point(301, 76);
-            this.blueBox.Name = "blueBox";
-            this.blueBox.Size = new System.Drawing.Size(47, 17);
-            this.blueBox.TabIndex = 10;
-            this.blueBox.Text = "Blue";
-            this.blueBox.UseVisualStyleBackColor = true;
-            // 
-            // chooseTwoLabel
-            // 
-            this.chooseTwoLabel.AutoSize = true;
-            this.chooseTwoLabel.Location = new System.Drawing.Point(369, 78);
-            this.chooseTwoLabel.Name = "chooseTwoLabel";
-            this.chooseTwoLabel.Size = new System.Drawing.Size(73, 13);
-            this.chooseTwoLabel.TabIndex = 11;
-            this.chooseTwoLabel.Text = "<-- (Choose 2)";
+            this.blueButton.AutoSize = true;
+            this.blueButton.Location = new System.Drawing.Point(302, 76);
+            this.blueButton.Name = "blueButton";
+            this.blueButton.Size = new System.Drawing.Size(46, 17);
+            this.blueButton.TabIndex = 14;
+            this.blueButton.Text = "Blue";
+            this.blueButton.UseVisualStyleBackColor = true;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 192);
-            this.Controls.Add(this.chooseTwoLabel);
-            this.Controls.Add(this.blueBox);
-            this.Controls.Add(this.greenBox);
-            this.Controls.Add(this.redBox);
+            this.Controls.Add(this.blueButton);
+            this.Controls.Add(this.greenButton);
+            this.Controls.Add(this.redButton);
             this.Controls.Add(this.offsetChannelsLabel);
             this.Controls.Add(this.horizontalOffsetTextBox);
             this.Controls.Add(this.horizontalOffsetLabel);
@@ -183,7 +170,7 @@ namespace Vegas_Chromatic_Aberration
             this.Controls.Add(this.verticalOffsetTextBox);
             this.Controls.Add(this.horizontalOffsetSlider);
             this.Name = "GUI";
-            this.Text = "NitroGuy\'s Chromatic Aberration";
+            this.Text = "NitroGuy\'s Chromatic Aberration (v1.0)";
             ((System.ComponentModel.ISupportInitialize)(this.verticalOffsetSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalOffsetSlider)).EndInit();
             this.ResumeLayout(false);
@@ -201,10 +188,9 @@ namespace Vegas_Chromatic_Aberration
         private System.Windows.Forms.TrackBar horizontalOffsetSlider;
         private System.Windows.Forms.TextBox horizontalOffsetTextBox;
         private System.Windows.Forms.Label offsetChannelsLabel;
-        private System.Windows.Forms.CheckBox redBox;
-        private System.Windows.Forms.CheckBox greenBox;
-        private System.Windows.Forms.CheckBox blueBox;
-        private System.Windows.Forms.Label chooseTwoLabel;
+        private System.Windows.Forms.RadioButton redButton;
+        private System.Windows.Forms.RadioButton greenButton;
+        private System.Windows.Forms.RadioButton blueButton;
     }
 }
 
