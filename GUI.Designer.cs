@@ -40,15 +40,16 @@ namespace Vegas_Chromatic_Aberration
             this.redButton = new System.Windows.Forms.RadioButton();
             this.greenButton = new System.Windows.Forms.RadioButton();
             this.blueButton = new System.Windows.Forms.RadioButton();
+            this.helpBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.verticalOffsetSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalOffsetSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // applyBtn
             // 
-            this.applyBtn.Location = new System.Drawing.Point(12, 118);
+            this.applyBtn.Location = new System.Drawing.Point(103, 118);
             this.applyBtn.Name = "applyBtn";
-            this.applyBtn.Size = new System.Drawing.Size(442, 62);
+            this.applyBtn.Size = new System.Drawing.Size(351, 62);
             this.applyBtn.TabIndex = 0;
             this.applyBtn.Text = "Create Tracks";
             this.applyBtn.UseVisualStyleBackColor = true;
@@ -153,11 +154,22 @@ namespace Vegas_Chromatic_Aberration
             this.blueButton.Text = "Blue";
             this.blueButton.UseVisualStyleBackColor = true;
             // 
+            // helpBtn
+            // 
+            this.helpBtn.Location = new System.Drawing.Point(15, 118);
+            this.helpBtn.Name = "helpBtn";
+            this.helpBtn.Size = new System.Drawing.Size(82, 62);
+            this.helpBtn.TabIndex = 15;
+            this.helpBtn.Text = "How to Use";
+            this.helpBtn.UseVisualStyleBackColor = true;
+            this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 192);
+            this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.blueButton);
             this.Controls.Add(this.greenButton);
             this.Controls.Add(this.redButton);
@@ -191,6 +203,7 @@ namespace Vegas_Chromatic_Aberration
         private System.Windows.Forms.RadioButton redButton;
         private System.Windows.Forms.RadioButton greenButton;
         private System.Windows.Forms.RadioButton blueButton;
+        private System.Windows.Forms.Button helpBtn;
     }
 }
 
